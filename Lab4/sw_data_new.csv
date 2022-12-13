@@ -1,0 +1,53 @@
+Food,Sweetness,Crustiness,Type
+
+Apple,7,7,0
+
+Salad,2,5,1
+
+Bacon,1,2,2
+
+Nuts,1,5,2
+
+Fish,1,1,2
+
+Cheese,1,1,2
+
+Banana,9,1,0
+
+Carrot,2,8,1
+
+Grape,8,1,0
+
+Orange,6,1,0
+
+Corn sticks,4,5,3
+
+Melon,5,7,3
+
+Potato chips,4,10,3
+
+Corn chips,5,8,3
+
+Strawberry,9,1,0
+
+Lettuce,3,7,1
+
+Shashlik,1,1,2
+
+Pear,5,3,0
+
+Celery,1,5,1
+
+Apple pie,6,10,0
+
+Brownie,10,9,0
+
+Puff with cottage cheese,8,6,0
+
+Cabbage,3,4,1
+
+Cinnamon,10,7,0
+
+Muesli,4,8,3
+
+Nori chips,5,9,3
