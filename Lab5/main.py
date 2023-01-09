@@ -11,15 +11,15 @@ from sklearn.svm import LinearSVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
-#загрузка и выбор первых 10000 строк датасета
-dataset = pd.read_csv(r"/Users/katyaanosova/Desktop/Covid_Data.csv")
+#загрузка и выбор 100 строк датасета
+dataset = pd.read_csv(r"/Users/Игорь/Desktop/Data_COVID_Tests.csv")
 dataset.sample(frac=1)
 dataset.drop('DATE_DIED', axis = 1, inplace = True)
-dataset = dataset.head(10000)
+dataset = dataset.head(100)
 
-#выделение целевого столбца и выбор первых 10000 строк
+#выделение целевого столбца и выбор первых 100 строк
 aim_label = dataset['CLASIFFICATION_FINAL']
-aim_label = aim_label.head(10000)
+aim_label = aim_label.head(100)
 dataset.drop('CLASIFFICATION_FINAL', axis = 1, inplace = True)
 
 #отбор значимых признаков
@@ -28,7 +28,7 @@ model.fit(dataset, aim_label)
 print("Отбор признаков по степени важности: ", model.feature_importances_)
 
 #формирование новой выборки значимых признаков
-columns = [0, 1, 2, 3, 4, 7, 8, 10, 11, 13, 14, 16, 17, 18]
+columns = [0, 1, 2, 3, 4, 7]
 dataset.drop(dataset.columns [columns], axis = 1, inplace = True)
 #print("Выборка из значимых признаков")
 #print(dataset.head())
@@ -61,10 +61,10 @@ print(f'Точность случайного леса: {round(score * 100, 2)}%
 
 #очищенные данные
 #очистка выборки значимых признаков
-dataset.loc[dataset['OBESITY'] > 2, 'OBESITY'] = 3
-dataset.loc[dataset['PNEUMONIA'] > 2, 'PNEUMONIA'] = 3
-dataset.loc[dataset['COPD'] > 2, 'COPD'] = 3
-dataset.loc[dataset['HIPERTENSION'] > 2, 'HIPERTENSION'] = 3
+dataset.loc[dataset['time'] > 2, 'time'] = 3
+dataset.loc[dataset['date'] > 2, 'date'] = 3
+dataset.loc[dataset['confirmed'] > 2, 'confirmed'] = 3
+dataset.loc[dataset['test'] > 2, 'test'] = 3
 dataset = dataset.fillna(3)
 
 #разделение датасета на обучающую и тестовую выборки
